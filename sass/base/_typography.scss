@@ -1,0 +1,23 @@
+.heading-primary{
+  font-size: 5rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+.subheading{
+  color: white;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.text{
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  color: $text;
+  line-height: 3rem;
+}

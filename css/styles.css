@@ -1,0 +1,173 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  /*By default, browsers põe padding e margin em alguns elementos */
+  margin: 0;
+  padding: 0;
+  /* Muda o box model para que os borders não adicionem ao total width ou padding de um elemento */
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: Helvetica, sans-serif; }
+
+body {
+  box-sizing: border-box; }
+
+.heading-primary {
+  font-size: 5rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  letter-spacing: 0.5rem; }
+
+.subheading {
+  color: white;
+  font-size: 2rem;
+  font-style: italic; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.text {
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  color: #454748;
+  line-height: 3rem; }
+
+.border-paddings {
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.color-primary-2 {
+  color: #165E6C; }
+
+.color-white {
+  color: white; }
+
+.padding-text-big {
+  padding-top: 5rem;
+  padding-right: 7rem; }
+
+.section {
+  height: 105vh;
+  background-color: #FFFFFF; }
+
+.header {
+  height: 100vh;
+  background-color: brown;
+  display: flex;
+  flex-direction: column; }
+  .header-home {
+    background-image: url("../../img/header_home.jpg");
+    background-position: center;
+    background-size: cover; }
+
+.headings {
+  color: white;
+  position: relative;
+  padding-left: 7rem;
+  padding-top: 9rem; }
+  .headings .subheading-position {
+    position: inherit;
+    right: 0; }
+
+.footer {
+  background-color: #03232C;
+  height: 20vh;
+  display: flex; }
+
+.social-media {
+  display: flex; }
+
+.navigation {
+  height: 10vh; }
+
+.container {
+  display: flex;
+  flex-direction: column; }
+
+.about {
+  display: flex;
+  flex-direction: row; }
+  .about > div {
+    width: 50%;
+    height: 100%; }
+  .about__left .pic__wave {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center; }
+    .about__left .pic__wave > div {
+      height: 75vh;
+      width: 12vw; }
+    .about__left .pic__wave-1 {
+      background-image: url("../../img/header_school.jpg");
+      background-position: center;
+      background-size: cover; }
+    .about__left .pic__wave-2 {
+      background-image: url("../../img/header_about.jpg");
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      top: -7rem; }
+    .about__left .pic__wave-3 {
+      background-image: url("../../img/section_about1.jpg");
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      top: 4rem; }
+  .about__right {
+    padding: 7rem; }
+
+.surfschool {
+  display: flex;
+  flex-direction: row; }
+  .surfschool > div {
+    width: 50%;
+    height: 100%; }
+  .surfschool__left {
+    background-image: url("../../img/section_school.jpg");
+    background-position: center;
+    background-size: cover; }
+  .surfschool__right {
+    padding: 7rem;
+    background-color: #03232C; }
+    .surfschool__right .off-position {
+      position: relative;
+      left: -30rem; }
+
+.surfstore {
+  background-image: url("../../img/section_store.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.properties {
+  display: flex;
+  flex-direction: row; }
+  .properties > div {
+    width: 50%;
+    height: 100%; }
+  .properties__left {
+    padding: 7rem; }
+  .properties__right {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .properties__right .i1 {
+      background-image: url("../../img/house1.jpg");
+      background-position: center;
+      background-size: cover; }
+    .properties__right .i2 {
+      background-image: url("../../img/house2.jpg");
+      background-position: center;
+      background-size: cover; }
+    .properties__right .i3 {
+      background-image: url("../../img/house3.jpg");
+      background-position: center;
+      background-size: cover; }
+    .properties__right .i4 {
+      background-image: url("../../img/header_propertie.jpg");
+      background-position: center;
+      background-size: cover; }

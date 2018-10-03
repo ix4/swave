@@ -1,0 +1,18 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  /*By default, browsers põe padding e margin em alguns elementos */
+  margin: 0;
+  padding: 0;
+  /* Muda o box model para que os borders não adicionem ao total width ou padding de um elemento */
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  background-color: orangered; }
+
+body {
+  box-sizing: border-box;
+  /* Para dar aquelas margens brancas */
+  padding: 3rem; }

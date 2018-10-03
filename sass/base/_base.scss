@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+/*By default, browsers põe padding e margin em alguns elementos */
+  margin: 0;
+  padding: 0;
+/* Muda o box model para que os borders não adicionem ao total width ou padding de um elemento */
+  box-sizing: inherit;
+}
+
+html{
+  //define o que 1rem é
+  font-size: 62.5%;  //1rem = 10px
+  font-family: Helvetica, sans-serif;
+}
+
+body{
+  box-sizing: border-box;
+}

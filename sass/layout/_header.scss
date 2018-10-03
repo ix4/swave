@@ -1,0 +1,23 @@
+.header{
+  height: 100vh;
+  background-color: brown;
+
+  display: flex;
+  flex-direction: column;
+
+  &-home{
+    @include bg-image('../../img/header_home.jpg');
+  }
+}
+
+.headings{
+  color: white;
+  position: relative;
+  padding-left: 7rem;
+  padding-top: 9rem;
+
+  .subheading-position{
+    position: inherit;
+    right: 0;
+  }
+}
