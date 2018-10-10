@@ -10,8 +10,13 @@
 
 html{
   //define o que 1rem é
-  font-size: 62.5%;  //1rem = 10px
+  font-size: 62.5%;
   font-family: Helvetica, sans-serif;
+  background-color: black;
+
+  @media only screen and (max-width: $bp-large){
+    font-size: 55% !important;
+  }
 }
 
 body{

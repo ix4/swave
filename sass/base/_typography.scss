@@ -3,12 +3,20 @@
   font-weight: bold;
   padding-bottom: 1rem;
   letter-spacing: 0.5rem;
+
+  @media only screen and (max-width: $bp-small){
+    font-size: 3rem;
+  }
 }
 
 .subheading{
   color: white;
   font-size: 2rem;
   font-style: italic;
+
+  @media only screen and (max-width: $bp-small){
+    font-size: 1.5rem;
+  }
 }
 
 .uppercase{
@@ -17,7 +25,39 @@
 
 .text{
   letter-spacing: 0.1rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: $text;
   line-height: 3rem;
+
+  @media only screen and (max-width: $bp-small){
+    font-size: 1.3rem;
+  }
+}
+
+.text-footer{
+  color: $footer-text;
+}
+
+.text__navlinks{
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  @media only screen and (max-width: $bp-small){
+    font-size: 3rem;
+  }
+}
+
+.link{
+  align-self: flex-end;
+}
+
+a{
+  text-decoration: none;
+
+  transition: all 1s;
+}
+
+a:hover {
+  color: $color-primary-2;
 }

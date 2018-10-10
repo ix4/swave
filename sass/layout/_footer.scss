@@ -1,8 +1,56 @@
 .footer{
   background-color: $color-primary-1;
   height: 20vh;
-
+  width: 100%;
+  padding: 3rem 7rem;
   display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+  z-index: -1;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  @media only screen and (max-width: $bp-medium){
+    height: 25vh;
+  }
+
+  @media only screen and (max-width: $bp-small){
+    height: 40vh;
+  }
+
+  @media only screen and (max-height: $bp-height){
+    height: 50vh;
+  }
+
+  & > div{
+    flex-grow: 1;
+
+    @media only screen and (max-width: $bp-large){
+      margin-right: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-small){
+      margin-bottom: 0.9rem;
+    }
+  }
+
+  &__left{
+    .logo{
+      width: 6rem;
+    }
+
+  }
+
+  &__middle{
+
+  }
+
+  &__right{
+
+  }
 }
 
 .social-media{

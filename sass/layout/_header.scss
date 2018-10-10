@@ -1,12 +1,22 @@
 .header{
   height: 100vh;
-  background-color: brown;
+  background-color: black;
+  z-index: 2;
 
   display: flex;
   flex-direction: column;
 
+  opacity: 0;
+
+  @include animation(2s, 0.8s, fade-in);
+
+
   &-home{
     @include bg-image('../../img/header_home.jpg');
+  }
+
+  .logo-big{
+    width: 18rem;
   }
 }
 
@@ -14,10 +24,28 @@
   color: white;
   position: relative;
   padding-left: 7rem;
-  padding-top: 9rem;
+  padding-top: 22vh;
+
+  @media only screen and (max-width: $bp-small){
+    padding-left: 2rem;
+  }
 
   .subheading-position{
     position: inherit;
     right: 0;
+
+    right: -10vh;
+    opacity: 0;
+
+    @include animation(2.1s, 0.5s, slide-right);
+
   }
+
+  .heading-primary{
+    position: relative;
+    left: -10vh;
+    opacity: 0;
+
+    @include animation(2.1s, 0.5s, slide-left);
+}
 }

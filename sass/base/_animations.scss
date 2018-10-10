@@ -1,0 +1,57 @@
+//LEFT
+@-webkit-keyframes slide-left {
+    100% {
+      left: 0;
+      opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    100% {
+      left: 0;
+      opacity: 1;
+     }
+}
+
+//RIGHT
+@-webkit-keyframes slide-right {
+    100% {
+      right: 0;
+      opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    100% {
+      right: 0;
+      opacity: 1;
+     }
+}
+
+//DOWN
+@-webkit-keyframes slide-down {
+    100% {
+      top: 0;
+      opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    100% {
+      top: 0;
+      opacity: 1;
+     }
+}
+
+//FADE IN
+@-webkit-keyframes fade-in {
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+     }
+}

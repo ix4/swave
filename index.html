@@ -8,43 +8,96 @@
   <title>Swave - Homepage</title>
 </head>
 <body class="container">
+  <div class="loading">
+    <div class="loading__anim">
+      <svg xmlns="http://www.w3.org/2000/svg"
+   width="10vw" height="10vw"
+   viewBox="5 0 80 60">
+  <path id="wave"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="4"
+      stroke-linecap="round">
+  </path>
+</svg>
+    </div>
+  </div>
   <div class="header header-home">
-    <div class="navigation"></div>
+    <div class="nav">
+      <div class="nav__left">
+        <img src="img/logo.png" alt="logo" class="logo">
+      </div>
+      <div class="nav__right">
+        <div class="menuFive">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+      </div>
+    </div>
     <div class="headings">
-      <h1 class="heading-primary">Wanna ride? Do it SWAVE</h1>
+      <h1 class="heading-primary">Wanna ride? Do it <img src="img/logo-big.png" alt="logo" class="logo-big"></h1>
       <br />
       <span class="subheading subheading-position">Learn with the best. Surf with the best. Be the best.</span>
     </div>
+
+    <div class="nav__options display-none">
+        <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link text__navlinks">About Swave</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link text__navlinks">Surf School</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link text__navlinks">Surf Store</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link text__navlinks">Properties</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link text__navlinks">Contacts</a>
+            </li>
+          </ul>
+    </div>
+    <div class="nav__menu">&nbsp;</div>
   </div>
   <div class="section about">
     <div class="about__left">
       <div class="pic__wave">
-        <div class="pic__wave-1"></div>
-        <div class="pic__wave-2"></div>
-        <div class="pic__wave-3"></div>
+        <div class="pic__wave-1 about"></div>
+        <div class="pic__wave-2 about"></div>
+        <div class="pic__wave-3 about"></div>
       </div>
     </div>
     <div class="about__right">
-      <h1 class="heading-primary uppercase color-primary-2"> <span class="off-position">We are passionate </span> <br /> about the sea</h1>
-      <p class="text padding-text-big">We are a school created by three guys who share the love of surfing in our hometown. No matter where life takes us, our beach is always waiting for us to return and catch some waves.</p>
-      <p class="text padding-text-big">Surfing is not as fun by ourselves so we created SWAVE - the first surf school on the bay. There is also a shop where you can buy the best surfboards in town and a lodging in case you are not from town.</p>
+      <h1 class="heading-primary uppercase color-primary-2 about">We are passionate <br /> about the sea</h1>
+      <p class="text padding-text-big about">We are a school created by three guys who share the love of surfing in our hometown. No matter where life takes us, our beach is always waiting for us to return and catch some waves.</p>
+      <p class="text padding-text-big about">Surfing is not as fun by ourselves so we created SWAVE - the first surf school on the bay. There is also a shop where you can buy the best surfboards in town and a lodging in case you are not from town.</p>
     </div>
   </div>
   <div class="section surfschool">
-    <div class="surfschool__left">
-
-    </div>
-    <div class="surfschool__right">
-      <h1 class="heading-primary uppercase color-white off-position">We are teachers</h1>
+    <div class="surfschool__left ss"></div>
+    <div class="surfschool__right ss">
+      <h1 class="heading-primary uppercase color-white">We are teachers</h1>
       <p class="text color-white padding-text-big">You will be up on your board in no time, learning from the best instructors around. We understand everyone has their pace and we are there for you every step of the way.</p>
       <p class="text color-white padding-text-big">Our classes are always practiced in a safe environment where you don’t see the ocean as the threat. You are never alone nor in danger.</p>
+      <p class="text color-white padding-text-big"><a href="#" class="link color-white">Know more ></a></p>
     </div>
   </div>
-  <div class="section surfstore">store</div>
+  <div class="section surfstore">
+    <div class="surfstore__left">
+      <h1 class="heading-primary uppercase color-white st">We are <br />trusted sellers</h1>
+    </div>
+    <div class="surfstore__right">
+      <p class="text color-white padding-text-big st">All our items have guaranteed quality and are mainly from local businesses. We believe supporting small but great companies is the way to go.</p>
+      <p class="text color-white padding-text-big st">Buy surf material or get stylish with our clothing offer.</p>
+    </div>
+  </div>
   <div class="section properties">
     <div class="properties__left">
-      <h1 class="heading-primary uppercase color-primary-2">We are <br /> your home</h1>
-      <p class="text padding-text-big">
+      <h1 class="heading-primary uppercase color-primary-2 pp">We are <br /> your home</h1>
+      <p class="text padding-text-big pp">
         We welcome visitors as our own family in the various properties to rent by the beach. You can go surfing any time you want and check the waves just by looking outside the window.
         <br />
         <br />
@@ -52,24 +105,36 @@
       </p>
     </div>
     <div class="properties__right">
-      <div class="properties__right__image i1"></div>
-      <div class="properties__right__image i2"></div>
-      <div class="properties__right__image i3"></div>
-      <div class="properties__right__image i4"></div>
+      <div class="properties__right__image i1 pp"></div>
+      <div class="properties__right__image i2 pp"></div>
+      <div class="properties__right__image i3 pp"></div>
+      <div class="properties__right__image i4 pp"></div>
     </div>
   </div>
   <footer class="footer">
     <div class="footer__left">
       <p class="text color-white">
-        SWAVE
+        <img src="img/logo.png" alt="logo" class="logo">
       </p>
-      <p class="text">@ 2018 All Rights Reserved</p>
+      <p class="text text-footer">@ 2018 All Rights Reserved</p>
       <div class="social-media">
-        
+
       </div>
     </div>
-    <div class="footer__middle"></div>
-    <div class="footer_right"></div>
+    <div class="footer__middle">
+      <p class="text color-white">
+        Ready to catch a wave?
+      </p>
+      <p class="text text-footer">swave@swave.com</p>
+      <p class="text text-footer">+1-202-555-0151</p>
+    </div>
+    <div class="footer_right">
+      <p class="text color-white">
+        Visit us!
+      </p>
+      <p class="text text-footer">Beach Rd, Titahi Bay, Porirua <br /> 5022, New Zealand</p>
+    </div>
   </footer>
+  <script src="js/index.js"></script>
 </body>
 </html>
