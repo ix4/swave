@@ -49,34 +49,38 @@ html {
 body {
   box-sizing: border-box; }
 
+.container {
+  display: flex;
+  flex-direction: column; }
+
 @-webkit-keyframes slide-left {
   100% {
-    left: 0;
+    transform: translateX(0);
     opacity: 1; } }
 
 @keyframes slide-left {
   100% {
-    left: 0;
+    transform: translateX(0);
     opacity: 1; } }
 
 @-webkit-keyframes slide-right {
   100% {
-    right: 0;
+    transform: translateX(0);
     opacity: 1; } }
 
 @keyframes slide-right {
   100% {
-    right: 0;
+    transform: translateX(0);
     opacity: 1; } }
 
 @-webkit-keyframes slide-down {
   100% {
-    top: 0;
+    transform: translateY(0);
     opacity: 1; } }
 
 @keyframes slide-down {
   100% {
-    top: 0;
+    transform: translateY(0);
     opacity: 1; } }
 
 @-webkit-keyframes fade-in {
@@ -103,6 +107,10 @@ body {
   @media only screen and (max-width: 492px) {
     .subheading {
       font-size: 1.5rem; } }
+
+.heading-tertiary {
+  font-size: 2.5rem;
+  font-weight: bold; }
 
 .uppercase {
   text-transform: uppercase; }
@@ -137,6 +145,9 @@ a {
 a:hover {
   color: #165E6C; }
 
+.bold {
+  font-weight: bold; }
+
 .border-paddings {
   padding-left: 3rem;
   padding-right: 3rem; }
@@ -155,6 +166,9 @@ a:hover {
       padding-top: 1rem;
       padding-right: 1rem; } }
 
+.padding-text-small {
+  padding-bottom: 1rem; }
+
 .display-none {
   visibility: hidden;
   opacity: 0;
@@ -162,7 +176,6 @@ a:hover {
 
 .section {
   height: 115vh;
-  width: 100vw;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: row;
@@ -212,6 +225,14 @@ a:hover {
     background-image: url("../../img/header_home.jpg");
     background-position: center;
     background-size: cover; }
+  .header-about {
+    background-image: url("../../img/header_about.jpg");
+    background-position: center;
+    background-size: cover; }
+  .header-school {
+    background-image: url("../../img/header_school.jpg");
+    background-position: center;
+    background-size: cover; }
   .header .logo-big {
     width: 18rem; }
 
@@ -223,57 +244,6 @@ a:hover {
   @media only screen and (max-width: 492px) {
     .headings {
       padding-left: 2rem; } }
-  .headings .subheading-position {
-    position: inherit;
-    right: 0;
-    right: -10vh;
-    opacity: 0;
-    -webkit-animation-delay: 2.1s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: slide-right;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 2.1s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: slide-right;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 2.1s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: slide-right;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 2.1s;
-    animation-duration: 0.5s;
-    animation-name: slide-right;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    transition-timing-function: ease-out; }
-  .headings .heading-primary {
-    position: relative;
-    left: -10vh;
-    opacity: 0;
-    -webkit-animation-delay: 2.1s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: slide-left;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 2.1s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: slide-left;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 2.1s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: slide-left;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 2.1s;
-    animation-duration: 0.5s;
-    animation-name: slide-left;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    transition-timing-function: ease-out; }
 
 .footer {
   background-color: #03232C;
@@ -318,10 +288,11 @@ a:hover {
   height: 10vh;
   width: 100vw;
   padding: 0 7rem;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all .5s; }
+  transition: all 1s; }
   @media only screen and (max-width: 492px) {
     .nav {
       padding: 0 2rem;
@@ -330,7 +301,7 @@ a:hover {
     width: 10rem;
     z-index: 2000;
     position: relative;
-    top: -100vw;
+    transform: translateY(-100vw);
     opacity: 0;
     -webkit-animation-delay: 2s;
     -webkit-animation-duration: 1s;
@@ -405,7 +376,7 @@ a:hover {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  top: -100vw;
+  transform: translateY(-100vw);
   opacity: 0;
   -webkit-animation-delay: 2s;
   -webkit-animation-duration: 1s;
@@ -480,9 +451,60 @@ a:hover {
   transform: rotate(-45deg);
   top: 13px; }
 
-.container {
-  display: flex;
-  flex-direction: column; }
+.changeNav {
+  height: 8vh !important;
+  background-color: #171717 !important; }
+
+.headings .subheading-position {
+  position: inherit;
+  transform: translateX(-10vh);
+  opacity: 0;
+  -webkit-animation-delay: 2.1s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: slide-right;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-delay: 2.1s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: slide-right;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-delay: 2.1s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: slide-right;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-delay: 2.1s;
+  animation-duration: 0.5s;
+  animation-name: slide-right;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  transition-timing-function: ease-out; }
+
+.headings .heading-primary {
+  transform: translateX(-10vh);
+  opacity: 0;
+  -webkit-animation-delay: 2.1s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: slide-left;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-delay: 2.1s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: slide-left;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-delay: 2.1s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: slide-left;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-delay: 2.1s;
+  animation-duration: 0.5s;
+  animation-name: slide-left;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  transition-timing-function: ease-out; }
 
 @media only screen and (max-width: 1024px) {
   .about {
@@ -502,7 +524,7 @@ a:hover {
       display: none; } }
   .about__left .pic__wave > div {
     position: relative;
-    left: 0;
+    transform: translateX(0);
     opacity: 0;
     transition: all 1s;
     height: 65vh;
@@ -513,19 +535,18 @@ a:hover {
   .about__left .pic__wave-1 {
     background-image: url("../../img/header_school.jpg");
     background-position: center;
-    background-size: cover;
-    top: 10rem; }
+    background-size: cover; }
   .about__left .pic__wave-2 {
     background-image: url("../../img/header_about.jpg");
     background-position: center;
     background-size: cover;
-    top: -20rem;
+    transform: translateY(-20rem);
     transition-delay: 0.5s !important; }
   .about__left .pic__wave-3 {
     background-image: url("../../img/section_about1.jpg");
     background-position: center;
     background-size: cover;
-    top: 20rem;
+    transform: translateY(20rem);
     transition-delay: 1s !important; }
 
 .about__right {
@@ -546,7 +567,7 @@ a:hover {
       padding: 2rem 2rem; } }
   .about__right > * {
     position: relative;
-    left: 10rem;
+    transform: translateX(10rem);
     opacity: 0;
     transition: all 1s; }
   .about__right > h1 {
@@ -559,7 +580,7 @@ a:hover {
   background-position: center;
   background-size: cover;
   position: relative;
-  left: -15rem;
+  transform: translateX(-15rem);
   opacity: 0;
   transition: all 1s; }
 
@@ -570,7 +591,7 @@ a:hover {
   justify-content: center;
   flex-direction: column;
   position: relative;
-  left: 15rem;
+  transform: translateX(15rem);
   opacity: 0;
   transition: all 1s; }
   @media only screen and (max-width: 492px) {
@@ -578,7 +599,7 @@ a:hover {
       padding: 2rem 2rem; } }
   .surfschool__right .off-position {
     position: relative;
-    left: -30rem; }
+    transform: translateX(-30rem); }
 
 .surfstore {
   background-image: url("../../img/section_store.jpg");
@@ -593,7 +614,7 @@ a:hover {
     padding-top: 16rem; }
     .surfstore__left > * {
       position: relative;
-      left: -15vh;
+      transform: translateX(-15vh);
       opacity: 0;
       transition: all 1s; }
     @media only screen and (max-width: 492px) {
@@ -614,7 +635,7 @@ a:hover {
         padding-top: 0; } }
     .surfstore__right > * {
       position: relative;
-      left: 15vh;
+      transform: translateX(15vh);
       opacity: 0;
       transition: all 1s; }
 
@@ -642,7 +663,7 @@ a:hover {
         padding: 2rem 2rem; } }
     .properties__left > * {
       position: relative;
-      left: -15vh;
+      transform: translateX(-15vh);
       opacity: 0;
       transition: all 1s; }
   .properties__right {
@@ -652,7 +673,7 @@ a:hover {
     grid-template-rows: 1fr 1fr; }
     .properties__right > * {
       position: relative;
-      left: 0;
+      transform: translateX(0);
       opacity: 0;
       transition: all 1s; }
     .properties__right .i1 {
@@ -675,3 +696,305 @@ a:hover {
       background-position: center;
       background-size: cover;
       transition-delay: 0.9s; }
+
+.headings {
+  display: grid;
+  align-content: flex-end; }
+  @media only screen and (max-width: 1024px) {
+    .headings {
+      min-height: 100vh;
+      transform: translateY(-15vh); } }
+  .headings .heading-primary {
+    position: relative;
+    transform: translateX(-10vh);
+    opacity: 0;
+    -webkit-animation-delay: 2.1s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: slide-left;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 2.1s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: slide-left;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 2.1s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: slide-left;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 2.1s;
+    animation-duration: 0.5s;
+    animation-name: slide-left;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    transition-timing-function: ease-out; }
+
+@media only screen and (max-width: 1024px) {
+  .s1 {
+    height: 100%; } }
+
+.s1 > div {
+  display: grid;
+  justify-content: center;
+  align-content: center; }
+
+.s1__left > * {
+  position: relative;
+  transform: translateX(0vh);
+  opacity: 0;
+  transition: all 1.5s; }
+
+@media only screen and (max-width: 1024px) {
+  .s1__left {
+    order: 2; } }
+
+.s1__right {
+  padding: 7rem; }
+  .s1__right > * {
+    position: relative;
+    transform: translateX(-15vh);
+    opacity: 0;
+    transition: all 1s; }
+  @media only screen and (max-width: 1024px) {
+    .s1__right {
+      order: 1; } }
+
+.s1__img .img-rect-1 {
+  height: 65vh;
+  width: 30vw;
+  background-image: url("../../img/about_1.jpg");
+  background-position: center;
+  background-size: cover; }
+  @media only screen and (max-width: 1024px) {
+    .s1__img .img-rect-1 {
+      height: 50vh;
+      width: 90vw;
+      background-position: bottom; } }
+
+@media only screen and (max-width: 1024px) {
+  .s2 {
+    height: 100%; } }
+
+.s2 > div {
+  display: grid;
+  justify-content: center;
+  align-content: center; }
+
+.s2__left {
+  padding: 7rem; }
+  .s2__left > * {
+    position: relative;
+    transform: translateX(-15vh);
+    opacity: 0;
+    transition: all 1s; }
+
+.s2__right > * {
+  position: relative;
+  transform: translateX(0vh);
+  opacity: 0;
+  transition: all 1.5s; }
+
+.s2__img .img-rect-2 {
+  height: 65vh;
+  width: 30vw;
+  background-image: url("../../img/about_2.jpg");
+  background-position: center;
+  background-size: cover; }
+  @media only screen and (max-width: 1024px) {
+    .s2__img .img-rect-2 {
+      height: 50vh;
+      width: 90vw;
+      background-position: bottom; } }
+
+.s3 {
+  margin-bottom: 20vh; }
+  @media only screen and (max-width: 1024px) {
+    .s3 {
+      height: 110%; } }
+  .s3 > div {
+    display: grid;
+    justify-content: center;
+    align-content: center; }
+  @media only screen and (max-width: 678px) {
+    .s3 {
+      margin-bottom: 25vh; } }
+  @media only screen and (max-width: 492px) {
+    .s3 {
+      margin-bottom: 40vh; } }
+  @media only screen and (max-height: 590px) {
+    .s3 {
+      margin-bottom: 50vh; } }
+  .s3__left > * {
+    position: relative;
+    transform: translateX(0vh);
+    opacity: 0;
+    transition: all 1.5s; }
+  @media only screen and (max-width: 1024px) {
+    .s3__left {
+      order: 2;
+      padding-bottom: 3rem; } }
+  .s3__right {
+    padding: 7rem; }
+    @media only screen and (max-width: 1024px) {
+      .s3__right {
+        order: 1; } }
+    .s3__right > * {
+      position: relative;
+      transform: translateX(-15vh);
+      opacity: 0;
+      transition: all 1s; }
+  .s3__img .img-rect-3 {
+    height: 65vh;
+    width: 30vw;
+    background-image: url("../../img/about_3.jpg");
+    background-position: center;
+    background-size: cover; }
+    @media only screen and (max-width: 1024px) {
+      .s3__img .img-rect-3 {
+        height: 50vh;
+        width: 90vw;
+        background-position: center; } }
+
+.headings {
+  display: grid;
+  align-content: flex-end;
+  min-height: 100vh;
+  transform: translateY(-20vh); }
+  .headings .heading-primary {
+    position: relative;
+    transform: translateX(-10vh);
+    opacity: 0;
+    padding-right: 1rem;
+    -webkit-animation-delay: 2.1s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: slide-left;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 2.1s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: slide-left;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 2.1s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: slide-left;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 2.1s;
+    animation-duration: 0.5s;
+    animation-name: slide-left;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    transition-timing-function: ease-out; }
+
+.s1 {
+  padding: 7rem;
+  height: auto;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex: 0 !important;
+  margin-bottom: 20vh; }
+  @media only screen and (max-width: 678px) {
+    .s1 {
+      margin-bottom: 25vh; } }
+  @media only screen and (max-width: 492px) {
+    .s1 {
+      margin-bottom: 40vh; } }
+  @media only screen and (max-height: 590px) {
+    .s1 {
+      margin-bottom: 50vh; } }
+  .s1__content {
+    width: 100% !important;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 2rem; }
+    .s1__content h1 {
+      position: relative;
+      transform: translateX(0vh);
+      opacity: 0;
+      transition: all 1.5s; }
+    .s1__content p {
+      position: relative;
+      transform: translateX(0vh);
+      opacity: 0;
+      transition: all 1.5s; }
+  .s1__options {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 4rem; }
+    @media only screen and (max-width: 492px) {
+      .s1__options {
+        grid-gap: 1rem; } }
+    .s1__options > div {
+      display: grid;
+      grid-gap: 3rem;
+      justify-content: center;
+      align-items: center; }
+      @media only screen and (max-width: 492px) {
+        .s1__options > div {
+          grid-gap: 1rem; } }
+      @media only screen and (max-width: 678px) {
+        .s1__options > div {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr; } }
+    .s1__options > div > .img {
+      height: 40vh;
+      width: 40vh; }
+      @media only screen and (max-width: 678px) {
+        .s1__options > div > .img {
+          width: 100%; } }
+    .s1__options-1 {
+      grid-template-columns: 1fr 4fr; }
+      .s1__options-1 .img {
+        position: relative;
+        transform: translateX(-15vh);
+        opacity: 0;
+        transition: all 1s;
+        background-image: url("../../img/section_about1.jpg");
+        background-position: center;
+        background-size: cover; }
+      .s1__options-1 .text-content > * {
+        position: relative;
+        transform: translateX(-15vh);
+        opacity: 0;
+        transition: all 1s; }
+    .s1__options-2 {
+      grid-template-columns: 4fr 1fr; }
+      @media only screen and (max-width: 678px) {
+        .s1__options-2 {
+          grid-template-areas: 'img' 'text'; } }
+      .s1__options-2 .img {
+        position: relative;
+        transform: translateX(15vh);
+        opacity: 0;
+        transition: all 1s;
+        background-image: url("../../img/section_school1.jpg");
+        background-position: center;
+        background-size: cover; }
+        @media only screen and (max-width: 678px) {
+          .s1__options-2 .img {
+            grid-area: img; } }
+      @media only screen and (max-width: 678px) {
+        .s1__options-2 .text-content {
+          grid-area: text; } }
+      .s1__options-2 .text-content > * {
+        position: relative;
+        transform: translateX(15vh);
+        opacity: 0;
+        transition: all 1s; }
+    .s1__options-3 {
+      grid-template-columns: 1fr 4fr; }
+      .s1__options-3 .img {
+        position: relative;
+        transform: translateX(-15vh);
+        opacity: 0;
+        transition: all 1s;
+        background-image: url("../../img/section_school2.jpg");
+        background-position: center;
+        background-size: cover; }
+      .s1__options-3 .text-content > * {
+        position: relative;
+        transform: translateX(-15vh);
+        opacity: 0;
+        transition: all 1s; }

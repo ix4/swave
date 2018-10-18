@@ -22,3 +22,8 @@ html{
 body{
   box-sizing: border-box;
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+}

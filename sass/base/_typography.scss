@@ -19,6 +19,11 @@
   }
 }
 
+.heading-tertiary{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
@@ -60,4 +65,8 @@ a{
 
 a:hover {
   color: $color-primary-2;
+}
+
+.bold{
+  font-weight: bold;
 }

@@ -1,13 +1,40 @@
 //UI
 var viewCtrl = (function (){
 
-  var elements = {
+  var homeElements = {
     sections: [
       sectionAbout = [document.querySelector('.about'), '.about'],
       sectionSchool = [document.querySelector('.surfschool'), '.ss'],
       sectionStore = [document.querySelector('.surfstore'), '.st'],
-      sectionProperties = [document.querySelector('.properties'), '.pp'],
+      sectionProperties = [document.querySelector('.properties'), '.pp']
     ],
+    aboutpics: document.querySelector('.pic__wave'),
+    wavepic1 : document.querySelector('.pic__wave-1'),
+    wavepic2 : document.querySelector('.pic__wave-2'),
+    wavepic3 : document.querySelector('.pic__wave-3'),
+  }
+
+  var aboutElements = {
+    sections: [
+      section1 = [document.querySelector('.s1'), '.s-1'],
+      section2 = [document.querySelector('.s2'), '.s-2'],
+      section3 = [document.querySelector('.s3'), '.s-3'],
+    ],
+  }
+  var schoolElements = {
+    sections: [
+      section1 = [document.querySelector('.s1__content'), '.s-c'],
+      section2 = [document.querySelector('.s1__options-1'), '.s-1'],
+      section3 = [document.querySelector('.s1__options-2'), '.s-2'],
+      section4 = [document.querySelector('.s1__options-3'), '.s-3'],
+    ]
+  }
+  var storeElements = {}
+  var propertiesElements = {}
+  var contactElements = {}
+
+  var elements = {
+
     loader: document.querySelector('.loading'),
     menuFive: document.querySelector('.menuFive'),
     navBar: document.querySelector('.nav'),
@@ -16,10 +43,6 @@ var viewCtrl = (function (){
     path: document.querySelector('#wave'),
     animation: document.querySelector('#moveTheWave'),
     headingTitle: document.querySelector('.heading-primary'),
-    aboutpics: document.querySelector('.pic__wave'),
-    wavepic1 : document.querySelector('.pic__wave-1'),
-    wavepic2 : document.querySelector('.pic__wave-2'),
-    wavepic3 : document.querySelector('.pic__wave-3'),
     footer: document.querySelector('.footer'),
   };
 
@@ -28,20 +51,59 @@ var viewCtrl = (function (){
       return elements;
     },
 
+    getHomeElements : function(){
+      return homeElements;
+    },
+
+    getAboutElements : function(){
+      return aboutElements;
+    },
+
+    getSchoolElements : function(){
+      return schoolElements;
+    },
+
+    getStoreElements : function(){
+      return storeElements;
+    },
+
+    getPropertiesElements : function(){
+      return propertiesElements;
+    },
+
+    getContactElements : function(){
+      return contactElements;
+    },
+
+    getPath : function(){
+      if ( window.location.pathname == '/about.html') {
+        return viewCtrl.getAboutElements();
+      } else if (window.location.pathname == '/school.html'){
+        return viewCtrl.getSchoolElements();
+      } else if (window.location.pathname == '/store.html'){
+        return viewCtrl.getStoreElements();
+      } else if (window.location.pathname == '/properties.html'){
+        return viewCtrl.getPropertiesElements();
+      } else if (window.location.pathname == '/contact.html'){
+        return viewCtrl.getContactElements();
+      } else {
+        return viewCtrl.getHomeElements();
+      }
+    },
+
     changeOpacity : function(className) {
       document.querySelectorAll(className).forEach(el => {
+        console.log(el);
         el.style.opacity = 1;
-        el.style.left = 0;
+        el.style.transform = 'translateX(0)';
       })
     },
 
     changeNavbarColor: function(scroll_pos, menuState) {
       if (scroll_pos > 100){
-        elements.navBar.style.height = '8vh';
-        elements.navBar.style.backgroundColor = '#171717';
+        elements.navBar.classList.add('changeNav');
       } else if (scroll_pos < 100 || menuState == true){
-        elements.navBar.style.backgroundColor = 'transparent';
-        elements.navBar.style.height = '10vh';
+        elements.navBar.classList.remove('changeNav');
       }
     },
 
@@ -64,7 +126,7 @@ var viewCtrl = (function (){
 
     elementPos: function(element, pos, number) {
       if (pos === 'top'){
-        element.style.top = number;
+        element.style.transform = `translateY(${number})`;
       }
     },
 
@@ -198,22 +260,24 @@ var appCtrl = (function (){
     }
   };
 
-  var fadeInEl = function(scroll_pos, val, DOM){
+  var fadeInEl = function(scroll_pos, val, DOM, domEl){
     // 1. Get Element Position
-    DOM.sections.forEach(function(cur){
+    domEl.sections.forEach(function(cur){
+
       var secPos = modelCtrl.getElPosition(cur[0]);
 
       // 2. Check if scroll has reached
       if (secPos <= val) {
+        console.log(cur);
         //2.1 If reached, change opacity
         viewCtrl.changeOpacity(cur[1], 1);
 
         // 2.2 Check if it is About Section or storeSection
         if (cur[1] == '.about') {
-          viewCtrl.elementPos(DOM.wavepic1, 'top', 0);
-          viewCtrl.elementPos(DOM.wavepic2, 'top', '-7rem');
-          viewCtrl.elementPos(DOM.wavepic3, 'top', '3rem');
-        } else if (cur[1] == '.st') {
+          domEl.wavepic1.style.transform = 'translateY(0)';
+          domEl.wavepic2.style.transform = 'translateY(-7rem)';
+          domEl.wavepic3.style.transform = 'translateY(3rem)';
+        } else if (cur[1] == '.st' || cur[1] == '.s-2') {
           viewCtrl.elementOpacity(DOM.footer, 1);
         }
       }
@@ -223,8 +287,9 @@ var appCtrl = (function (){
 
   var scrollAct = function(){
     var DOM = viewCtrl.getElements();
+    var domEl = viewCtrl.getPath();
+
     last_known_scroll_position = window.scrollY;
-    console.log(last_known_scroll_position);
     // 1. Check if Scroll is Happening
     var scrollMode = modelCtrl.checkIfScroll(ticking);
 
@@ -234,7 +299,7 @@ var appCtrl = (function (){
         viewCtrl.changeNavbarColor(last_known_scroll_position, menuState);
 
         // 3. If on a new section, fade elements in
-        fadeInEl(last_known_scroll_position, 500, DOM);
+        fadeInEl(last_known_scroll_position, 500, DOM, domEl);
         ticking = false;
       });
     } else {
@@ -288,7 +353,9 @@ var appCtrl = (function (){
   return {
     init: function(){
       // 1. Get DOM Strings
+      var domEl = viewCtrl.getPath();
       var DOM = viewCtrl.getElements();
+
       // 2. Start Events
       setupEventListeners();
       // 3. Hide footer

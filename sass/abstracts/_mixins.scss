@@ -27,6 +27,7 @@
     animation-fill-mode: forwards; /* this prevents the animation from restarting! */
     transition-timing-function: ease-out;
 }
+
 @mixin flex-align(){
   display: flex;
   justify-content: center;
@@ -35,7 +36,13 @@
 
 @mixin fadein($left, $trans-time){
   position: relative;
-  left: $left;
+  transform: translateX($left);
   opacity: 0;
   transition: all $trans-time;
+}
+
+@mixin grid-align(){
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }

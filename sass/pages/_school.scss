@@ -1,0 +1,151 @@
+.headings{
+  display: grid;
+  //min-height: 90vh !important;
+  align-content: flex-end;
+  min-height: 100vh;
+  transform: translateY(-20vh);
+
+  .heading-primary{
+    position: relative;
+    transform: translateX(-10vh);
+    opacity: 0;
+    padding-right: 1rem;
+
+    @include animation(2.1s, 0.5s, slide-left);
+  }
+}
+
+.s1{
+  padding: 7rem;
+  height: auto;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex: 0 !important;
+
+  margin-bottom: 20vh;
+
+  @media only screen and (max-width: $bp-medium){
+    margin-bottom: 25vh;
+  }
+
+  @media only screen and (max-width: $bp-small){
+    margin-bottom: 40vh;
+  }
+
+  @media only screen and (max-height: $bp-height){
+    margin-bottom: 50vh;
+  }
+
+
+  &__content{
+    width: 100% !important;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 2rem;
+
+    h1{
+      @include fadein(0vh, 1.5s);
+    }
+
+    p{
+      @include fadein(0vh, 1.5s);
+    }
+  }
+
+  &__options{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 4rem;
+
+    @media only screen and (max-width: $bp-small){
+      grid-gap: 1rem;
+    }
+
+    & > div {
+      display: grid;
+      //grid-template-columns: 1fr 4fr;
+      grid-gap: 3rem;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: $bp-small){
+        grid-gap: 1rem;
+      }
+
+      @media only screen and (max-width: $bp-medium){
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+
+    & > div > .img{
+      height: 40vh;
+      width: 40vh;
+
+      @media only screen and (max-width: $bp-medium){
+        width: 100%;
+      }
+
+    }
+
+
+    &-1{
+      grid-template-columns: 1fr 4fr;
+
+      .img{
+        @include fadein(-15vh, 1s);
+        @include bg-image('../../img/section_about1.jpg');
+      }
+
+      .text-content{
+
+        & > * {
+          @include fadein(-15vh, 1s);
+        }
+      }
+
+    }
+
+    &-2{
+      grid-template-columns: 4fr 1fr;
+
+      @media only screen and (max-width: $bp-medium){
+        grid-template-areas: 'img' 'text';
+      }
+
+      .img{
+        @include fadein(15vh, 1s);
+        @include bg-image('../../img/section_school1.jpg');
+
+        @media only screen and (max-width: $bp-medium){
+          grid-area: img;
+        }
+      }
+
+      .text-content{
+        @media only screen and (max-width: $bp-medium){
+          grid-area: text;
+        }
+        & > * {
+          @include fadein(15vh, 1s);
+        }
+
+      }
+
+    }
+
+    &-3{
+      grid-template-columns: 1fr 4fr;
+        .img{
+          @include fadein(-15vh, 1s);
+          @include bg-image('../../img/section_school2.jpg');
+        }
+
+      .text-content > * {
+        @include fadein(-15vh, 1s);
+      }
+    }
+
+  }
+
+}

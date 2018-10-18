@@ -15,6 +15,14 @@
     @include bg-image('../../img/header_home.jpg');
   }
 
+  &-about{
+    @include bg-image('../../img/header_about.jpg');
+  }
+
+  &-school{
+    @include bg-image('../../img/header_school.jpg');
+  }
+
   .logo-big{
     width: 18rem;
   }
@@ -30,22 +38,5 @@
     padding-left: 2rem;
   }
 
-  .subheading-position{
-    position: inherit;
-    right: 0;
 
-    right: -10vh;
-    opacity: 0;
-
-    @include animation(2.1s, 0.5s, slide-right);
-
-  }
-
-  .heading-primary{
-    position: relative;
-    left: -10vh;
-    opacity: 0;
-
-    @include animation(2.1s, 0.5s, slide-left);
-}
 }
