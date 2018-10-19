@@ -8,7 +8,7 @@
 
   opacity: 0;
 
-  @include animation(2s, 0.8s, fade-in);
+  @include animation(1.5s, 0.8s, fade-in);
 
 
   &-home{
@@ -23,6 +23,14 @@
     @include bg-image('../../img/header_school.jpg');
   }
 
+  &-properties{
+    @include bg-image('../../img/header_propertie.jpg');
+  }
+
+  &-store{
+    @include bg-image('../../img/header_store.jpg');
+  }
+
   .logo-big{
     width: 18rem;
   }
@@ -34,8 +42,48 @@
   padding-left: 7rem;
   padding-top: 22vh;
 
+  display: grid;
+  //min-height: 90vh !important;
+
+
+  &-home{
+
+  }
+
+  &-about{
+    transform: translateY(-15vh);
+    align-content: flex-end;
+    min-height: 100vh;
+
+    @media only screen and (max-width: $bp-largest){
+      min-height: 100vh;
+      transform: translateY(-15vh);
+    }
+  }
+
+  &-school{
+    transform: translateY(-15vh);
+    align-content: flex-end;
+    min-height: 100vh;
+  }
+
+  &-properties{
+    transform: translateY(-10vh);
+    align-content: flex-end;
+    min-height: 100vh;
+  }
+
   @media only screen and (max-width: $bp-small){
     padding-left: 2rem;
+  }
+
+  .heading-primary{
+    position: relative;
+    transform: translateX(-10vh);
+    opacity: 0;
+    padding-right: 1rem;
+
+    @include animation(1.5s, 0.5s, slide-left);
   }
 
 

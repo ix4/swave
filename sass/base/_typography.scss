@@ -19,9 +19,23 @@
   }
 }
 
+.heading-secondary{
+  font-size: 3rem;
+  color: black;
+  font-weight: bold;
+
+  @media only screen and (max-width: $bp-small){
+    font-size: 2rem;
+  }
+}
+
 .heading-tertiary{
   font-size: 2.5rem;
   font-weight: bold;
+  
+  @media only screen and (max-width: $bp-small){
+    font-size: 1.5rem;
+  }
 }
 
 .uppercase{
@@ -29,7 +43,6 @@
 }
 
 .text{
-  letter-spacing: 0.1rem;
   font-size: 1.8rem;
   color: $text;
   line-height: 3rem;
@@ -39,8 +52,15 @@
   }
 }
 
+.text-popup{
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
 .text-footer{
   color: $footer-text;
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
 }
 
 .text__navlinks{

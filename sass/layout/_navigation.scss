@@ -31,7 +31,7 @@
       width: 7rem;
     }
 
-    @include animation(2s, 1s, slide-down);
+    @include animation(1.5s, 0.5s, slide-down);
   }
 
   &__menu{
@@ -111,7 +111,7 @@
   position: relative;
   transform: translateY(-100vw);
   opacity: 0;
-  @include animation(2s, 1s, slide-down);
+  @include animation(1.5s, 0.5s, slide-down);
 }
 .menuFive span{
   background-color:#FFF;

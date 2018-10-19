@@ -4,6 +4,8 @@
 @import "abstracts/mixins";
 
 @import "components/loader";
+@import "components/popup";
+@import "components/map";
 
 @import "base/base";
 @import "base/animations";
@@ -18,3 +20,6 @@
 @import "pages/home";
 @import "pages/about";
 @import "pages/school";
+@import "pages/properties";
+@import "pages/store";
+@import "pages/contact";

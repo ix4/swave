@@ -1,25 +1,10 @@
-.headings{
-  display: grid;
-  //min-height: 90vh !important;
-  align-content: flex-end;
-
-  @media only screen and (max-width: $bp-largest){
-    min-height: 100vh;
-    transform: translateY(-15vh);
-  }
-
-  .heading-primary{
-    position: relative;
-    transform: translateX(-10vh);
-    opacity: 0;
-
-    @include animation(2.1s, 0.5s, slide-left);
-  }
-}
-
 .s1{
   @media only screen and (max-width: $bp-largest){
     height: 100%;
+  }
+
+  &__nomargin{
+    margin-bottom: 0 !important;
   }
 
   & > div {

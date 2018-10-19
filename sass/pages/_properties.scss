@@ -1,0 +1,72 @@
+.s1{
+
+  &__content{
+    & > h1, p {
+      @include fadein(0vh, 1.5s);
+    }
+  }
+
+  &__properties{
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+
+    @media only screen and (max-width: $bp-small){
+      grid-gap: 0.5rem;
+      padding-top: 2rem;
+
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    & > * {
+      @include fadein(0vh, 1.5s);
+    }
+
+    .property{
+      width: 100%;
+      height: 25vw;
+      cursor: pointer;
+
+      //transition: all 0.2;
+
+      &:hover{
+        opacity: 0.2 !important;
+      }
+
+      @media only screen and (max-width: $bp-small){
+        height: 30vw;
+      }
+
+      &-1{
+        @include bg-image('../../img/house1.jpg');
+      }
+      &-2{
+        @include bg-image('../../img/house2.jpg');
+        //transition-delay: 0.3s;
+      }
+      &-3{
+        @include bg-image('../../img/house3.jpg');
+        //transition-delay: 0.6s;
+      }
+      &-4{
+        @include bg-image('../../img/house4.jpg');
+        //transition-delay: 0.9s;
+      }
+      &-5{
+        @include bg-image('../../img/header_propertie.jpg');
+        //transition-delay: 1.2s;
+      }
+      &-6{
+        @include bg-image('../../img/house5.jpg');
+        //transition-delay: 1.5s;
+      }
+    }
+  }
+}

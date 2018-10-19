@@ -11,7 +11,7 @@
   visibility: visible;
   opacity: 1;
   transition: all 1s ease-in-out;
-  transition-delay: 1s; }
+  transition-delay: 0.4s; }
   .loading__anim {
     border: 4px solid #FFFFFF; }
     .loading__anim svg {
@@ -28,6 +28,118 @@
   100% {
     stroke-dashoffset: -133;
     transform: translate3d(-90px, 0, 0); } }
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000000;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
+  .popup-target {
+    opacity: 1;
+    visibility: visible; }
+  .popup__content {
+    background-color: white;
+    width: 80vw;
+    height: 85vh;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    opacity: 1;
+    transition: all .2s; }
+    @media only screen and (max-width: 768px) {
+      .popup__content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh min-content;
+        height: 100%; } }
+    @media only screen and (max-width: 678px) {
+      .popup__content {
+        width: 80vw;
+        height: 100%; } }
+  @media only screen and (max-width: 492px) {
+    .popup__description {
+      display: none; } }
+  .popup__right {
+    height: 100%;
+    padding: 3rem;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 3rem; }
+    @media only screen and (max-width: 768px) {
+      .popup__right {
+        grid-gap: 1rem;
+        align-content: flex-start; } }
+  .popup__close {
+    justify-self: end;
+    align-self: flex-start;
+    font-size: 3rem;
+    cursor: pointer; }
+    .popup__close:link, .popup__close:visited {
+      color: grey;
+      font-size: 7rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 1; }
+    .popup__close:hover {
+      color: #165E6C; }
+  .popup__image {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../img/house1.jpg");
+    background-position: center;
+    background-size: cover; }
+  .popup__book {
+    margin-top: 2rem; }
+  .popup__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 3rem; }
+    .popup__features .feature {
+      display: flex;
+      align-items: start;
+      align-content: center; }
+      .popup__features .feature__img {
+        height: 4rem;
+        width: 4rem;
+        margin-right: 1rem; }
+      .popup__features .feature-1 .feature__img {
+        background-image: url("../../img/distance.png");
+        background-position: center;
+        background-size: cover; }
+      .popup__features .feature-2 .feature__img {
+        background-image: url("../../img/bed.png");
+        background-position: center;
+        background-size: cover; }
+      .popup__features .feature-3 .feature__img {
+        background-image: url("../../img/tag.png");
+        background-position: center;
+        background-size: cover; }
+      .popup__features .feature-4 .feature__img {
+        background-image: url("../../img/selection.png");
+        background-position: center;
+        background-size: cover; }
+
+#map {
+  width: 100%;
+  height: 35vh; }
 
 *,
 *::after,
@@ -108,15 +220,25 @@ body {
     .subheading {
       font-size: 1.5rem; } }
 
+.heading-secondary {
+  font-size: 3rem;
+  color: black;
+  font-weight: bold; }
+  @media only screen and (max-width: 492px) {
+    .heading-secondary {
+      font-size: 2rem; } }
+
 .heading-tertiary {
   font-size: 2.5rem;
   font-weight: bold; }
+  @media only screen and (max-width: 492px) {
+    .heading-tertiary {
+      font-size: 1.5rem; } }
 
 .uppercase {
   text-transform: uppercase; }
 
 .text {
-  letter-spacing: 0.1rem;
   font-size: 1.8rem;
   color: #454748;
   line-height: 3rem; }
@@ -124,8 +246,14 @@ body {
     .text {
       font-size: 1.3rem; } }
 
+.text-popup {
+  font-size: 1.5rem;
+  line-height: 3rem; }
+
 .text-footer {
-  color: #707070; }
+  color: #707070;
+  letter-spacing: 0.1rem;
+  line-height: 3rem; }
 
 .text__navlinks {
   font-size: 4rem;
@@ -157,6 +285,9 @@ a:hover {
 
 .color-white {
   color: white; }
+
+.grey {
+  color: #707070; }
 
 .padding-text-big {
   padding-top: 5rem;
@@ -200,22 +331,22 @@ a:hover {
   display: flex;
   flex-direction: column;
   opacity: 0;
-  -webkit-animation-delay: 2s;
+  -webkit-animation-delay: 1.5s;
   -webkit-animation-duration: 0.8s;
   -webkit-animation-name: fade-in;
   -webkit-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -moz-animation-delay: 2s;
+  -moz-animation-delay: 1.5s;
   -moz-animation-duration: 0.8s;
   -moz-animation-name: fade-in;
   -moz-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -o-animation-delay: 2s;
+  -o-animation-delay: 1.5s;
   -o-animation-duration: 0.8s;
   -o-animation-name: fade-in;
   -o-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  animation-delay: 2s;
+  animation-delay: 1.5s;
   animation-duration: 0.8s;
   animation-name: fade-in;
   animation-fill-mode: forwards;
@@ -233,6 +364,14 @@ a:hover {
     background-image: url("../../img/header_school.jpg");
     background-position: center;
     background-size: cover; }
+  .header-properties {
+    background-image: url("../../img/header_propertie.jpg");
+    background-position: center;
+    background-size: cover; }
+  .header-store {
+    background-image: url("../../img/header_store.jpg");
+    background-position: center;
+    background-size: cover; }
   .header .logo-big {
     width: 18rem; }
 
@@ -240,10 +379,53 @@ a:hover {
   color: white;
   position: relative;
   padding-left: 7rem;
-  padding-top: 22vh; }
+  padding-top: 22vh;
+  display: grid; }
+  .headings-about {
+    transform: translateY(-15vh);
+    align-content: flex-end;
+    min-height: 100vh; }
+    @media only screen and (max-width: 1024px) {
+      .headings-about {
+        min-height: 100vh;
+        transform: translateY(-15vh); } }
+  .headings-school {
+    transform: translateY(-15vh);
+    align-content: flex-end;
+    min-height: 100vh; }
+  .headings-properties {
+    transform: translateY(-10vh);
+    align-content: flex-end;
+    min-height: 100vh; }
   @media only screen and (max-width: 492px) {
     .headings {
       padding-left: 2rem; } }
+  .headings .heading-primary {
+    position: relative;
+    transform: translateX(-10vh);
+    opacity: 0;
+    padding-right: 1rem;
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: slide-left;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 1.5s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: slide-left;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 1.5s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: slide-left;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 1.5s;
+    animation-duration: 0.5s;
+    animation-name: slide-left;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    transition-timing-function: ease-out; }
 
 .footer {
   background-color: #03232C;
@@ -303,23 +485,23 @@ a:hover {
     position: relative;
     transform: translateY(-100vw);
     opacity: 0;
-    -webkit-animation-delay: 2s;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-duration: 0.5s;
     -webkit-animation-name: slide-down;
     -webkit-animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
-    -moz-animation-delay: 2s;
-    -moz-animation-duration: 1s;
+    -moz-animation-delay: 1.5s;
+    -moz-animation-duration: 0.5s;
     -moz-animation-name: slide-down;
     -moz-animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
-    -o-animation-delay: 2s;
-    -o-animation-duration: 1s;
+    -o-animation-delay: 1.5s;
+    -o-animation-duration: 0.5s;
     -o-animation-name: slide-down;
     -o-animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
-    animation-delay: 2s;
-    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-duration: 0.5s;
     animation-name: slide-down;
     animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
@@ -378,23 +560,23 @@ a:hover {
   position: relative;
   transform: translateY(-100vw);
   opacity: 0;
-  -webkit-animation-delay: 2s;
-  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1.5s;
+  -webkit-animation-duration: 0.5s;
   -webkit-animation-name: slide-down;
   -webkit-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -moz-animation-delay: 2s;
-  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1.5s;
+  -moz-animation-duration: 0.5s;
   -moz-animation-name: slide-down;
   -moz-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  -o-animation-delay: 2s;
-  -o-animation-duration: 1s;
+  -o-animation-delay: 1.5s;
+  -o-animation-duration: 0.5s;
   -o-animation-name: slide-down;
   -o-animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
-  animation-delay: 2s;
-  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-duration: 0.5s;
   animation-name: slide-down;
   animation-fill-mode: forwards;
   /* this prevents the animation from restarting! */
@@ -697,42 +879,12 @@ a:hover {
       background-size: cover;
       transition-delay: 0.9s; }
 
-.headings {
-  display: grid;
-  align-content: flex-end; }
-  @media only screen and (max-width: 1024px) {
-    .headings {
-      min-height: 100vh;
-      transform: translateY(-15vh); } }
-  .headings .heading-primary {
-    position: relative;
-    transform: translateX(-10vh);
-    opacity: 0;
-    -webkit-animation-delay: 2.1s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: slide-left;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 2.1s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: slide-left;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 2.1s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: slide-left;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 2.1s;
-    animation-duration: 0.5s;
-    animation-name: slide-left;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    transition-timing-function: ease-out; }
-
 @media only screen and (max-width: 1024px) {
   .s1 {
     height: 100%; } }
+
+.s1__nomargin {
+  margin-bottom: 0 !important; }
 
 .s1 > div {
   display: grid;
@@ -856,38 +1008,6 @@ a:hover {
         width: 90vw;
         background-position: center; } }
 
-.headings {
-  display: grid;
-  align-content: flex-end;
-  min-height: 100vh;
-  transform: translateY(-20vh); }
-  .headings .heading-primary {
-    position: relative;
-    transform: translateX(-10vh);
-    opacity: 0;
-    padding-right: 1rem;
-    -webkit-animation-delay: 2.1s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: slide-left;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 2.1s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: slide-left;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 2.1s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: slide-left;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 2.1s;
-    animation-duration: 0.5s;
-    animation-name: slide-left;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    transition-timing-function: ease-out; }
-
 .s1 {
   padding: 7rem;
   height: auto;
@@ -998,3 +1118,154 @@ a:hover {
         transform: translateX(-15vh);
         opacity: 0;
         transition: all 1s; }
+
+.s1__content > h1, .s1__content p {
+  position: relative;
+  transform: translateX(0vh);
+  opacity: 0;
+  transition: all 1.5s; }
+
+.s1__properties {
+  padding-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 5rem;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative; }
+  @media only screen and (max-width: 492px) {
+    .s1__properties {
+      grid-gap: 0.5rem;
+      padding-top: 2rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr; } }
+  .s1__properties > * {
+    position: relative;
+    transform: translateX(0vh);
+    opacity: 0;
+    transition: all 1.5s; }
+  .s1__properties .property {
+    width: 100%;
+    height: 25vw;
+    cursor: pointer; }
+    .s1__properties .property:hover {
+      opacity: 0.2 !important; }
+    @media only screen and (max-width: 492px) {
+      .s1__properties .property {
+        height: 30vw; } }
+    .s1__properties .property-1 {
+      background-image: url("../../img/house1.jpg");
+      background-position: center;
+      background-size: cover; }
+    .s1__properties .property-2 {
+      background-image: url("../../img/house2.jpg");
+      background-position: center;
+      background-size: cover; }
+    .s1__properties .property-3 {
+      background-image: url("../../img/house3.jpg");
+      background-position: center;
+      background-size: cover; }
+    .s1__properties .property-4 {
+      background-image: url("../../img/house4.jpg");
+      background-position: center;
+      background-size: cover; }
+    .s1__properties .property-5 {
+      background-image: url("../../img/header_propertie.jpg");
+      background-position: center;
+      background-size: cover; }
+    .s1__properties .property-6 {
+      background-image: url("../../img/house5.jpg");
+      background-position: center;
+      background-size: cover; }
+
+.s1__map {
+  width: 90vw; }
+
+.contacts {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #03232C;
+  justify-content: center;
+  grid-gap: 1rem;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-name: fade-in;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-delay: 1s;
+  -moz-animation-duration: 0.8s;
+  -moz-animation-name: fade-in;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-delay: 1s;
+  -o-animation-duration: 0.8s;
+  -o-animation-name: fade-in;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-delay: 1s;
+  animation-duration: 0.8s;
+  animation-name: fade-in;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  transition-timing-function: ease-out; }
+  @media only screen and (max-width: 1024px) {
+    .contacts {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr; } }
+  .contacts > div {
+    width: 100% !important;
+    height: 100%; }
+  .contacts__left {
+    background-image: url("../../img/header_contact.jpg");
+    background-position: center;
+    background-size: cover; }
+    @media only screen and (max-width: 1024px) {
+      .contacts__left {
+        height: 30vh !important; } }
+  .contacts__right {
+    background-color: #03232C;
+    padding: 7rem;
+    display: flex;
+    flex-direction: column; }
+    .contacts__right > * {
+      transform: translateX(15vh);
+      opacity: 0;
+      -webkit-animation-delay: 2s;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-name: slide-left;
+      -webkit-animation-fill-mode: forwards;
+      /* this prevents the animation from restarting! */
+      -moz-animation-delay: 2s;
+      -moz-animation-duration: 1s;
+      -moz-animation-name: slide-left;
+      -moz-animation-fill-mode: forwards;
+      /* this prevents the animation from restarting! */
+      -o-animation-delay: 2s;
+      -o-animation-duration: 1s;
+      -o-animation-name: slide-left;
+      -o-animation-fill-mode: forwards;
+      /* this prevents the animation from restarting! */
+      animation-delay: 2s;
+      animation-duration: 1s;
+      animation-name: slide-left;
+      animation-fill-mode: forwards;
+      /* this prevents the animation from restarting! */
+      transition-timing-function: ease-out; }
+    @media only screen and (max-width: 492px) {
+      .contacts__right {
+        padding: 3rem; } }
+  .contacts__map {
+    height: 100%;
+    margin-bottom: 2rem; }
+    @media only screen and (max-width: 492px) {
+      .contacts__map {
+        width: 90vw; } }
+  .contacts__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .contacts__info > p {
+      line-height: 2.5rem; }
