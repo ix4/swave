@@ -127,11 +127,11 @@ var viewCtrl = (function (){
     },
 
     changeNavbarColor: function(scroll_pos, menuState) {
-      console.log(menuState);
+      //console.log(menuState);
       if (scroll_pos > 100 && !menuState){
         elements.navBar.classList.add('changeNav');
       } else if (scroll_pos < 100 || menuState){
-        console.log(menuState + 'is true');
+        //console.log(menuState + 'is true');
         elements.navBar.classList.remove('changeNav');
       }
     },
@@ -230,7 +230,7 @@ var house4 = new House('The Cozy Cottage',
 
 var house5 = new House('The Cozy Cottage',
   'A beautiful house by the beach where you can breath in fresh air and listen to the waves.',
-  '../../img/house5.jpg',
+  '../../img/header_propertie.jpg',
   '500m',
   '3',
   '50€/night',
@@ -239,7 +239,7 @@ var house5 = new House('The Cozy Cottage',
 
 var house6 = new House('The Cozy Cottage',
   'A beautiful house by the beach where you can breath in fresh air and listen to the waves.',
-  '../../img/header_propertie.jpg',
+  '../../img/house5.jpg',
   '500m',
   '3',
   '50€/night',
