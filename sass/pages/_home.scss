@@ -97,9 +97,18 @@
 }
 
 .surfschool{
+  @media only screen and (max-width: $bp-largest){
+    height: 140vh;
+  }
+
+
   &__left{
     @include bg-image('../../img/section_school.jpg');
     @include fadein(-15rem, 1s);
+
+    @media only screen and (max-width: $bp-largest){
+      height: 100vh;
+    }
   }
 
   &__right{

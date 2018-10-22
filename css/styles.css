@@ -270,9 +270,6 @@ a {
   text-decoration: none;
   transition: all 1s; }
 
-a:hover {
-  color: #165E6C; }
-
 .bold {
   font-weight: bold; }
 
@@ -288,6 +285,27 @@ a:hover {
 
 .grey {
   color: #707070; }
+
+.text-color {
+  padding: 1rem 1.5rem;
+  color: #454748;
+  border: 2px solid #165E6C; }
+  .text-color:hover {
+    background-color: #165E6C;
+    color: white; }
+  @media only screen and (max-width: 678px) {
+    .text-color {
+      padding: 0.5rem 1rem; } }
+  .text-color-white {
+    color: white;
+    padding: 1rem 1.5rem;
+    border: 2px solid white; }
+    @media only screen and (max-width: 678px) {
+      .text-color-white {
+        padding: 0.5rem 1rem; } }
+    .text-color-white:hover {
+      background-color: white;
+      color: #165E6C; }
 
 .padding-text-big {
   padding-top: 5rem;
@@ -635,7 +653,7 @@ a:hover {
 
 .changeNav {
   height: 8vh !important;
-  background-color: #171717 !important; }
+  background-color: #171717; }
 
 .headings .subheading-position {
   position: inherit;
@@ -757,6 +775,10 @@ a:hover {
   .about__right > p {
     transition-delay: 1s !important; }
 
+@media only screen and (max-width: 1024px) {
+  .surfschool {
+    height: 140vh; } }
+
 .surfschool__left {
   background-image: url("../../img/section_school.jpg");
   background-position: center;
@@ -765,6 +787,9 @@ a:hover {
   transform: translateX(-15rem);
   opacity: 0;
   transition: all 1s; }
+  @media only screen and (max-width: 1024px) {
+    .surfschool__left {
+      height: 100vh; } }
 
 .surfschool__right {
   padding: 7rem;

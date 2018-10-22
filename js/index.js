@@ -127,9 +127,11 @@ var viewCtrl = (function (){
     },
 
     changeNavbarColor: function(scroll_pos, menuState) {
-      if (scroll_pos > 100){
+      console.log(menuState);
+      if (scroll_pos > 100 && !menuState){
         elements.navBar.classList.add('changeNav');
-      } else if (scroll_pos < 100 || menuState == true){
+      } else if (scroll_pos < 100 || menuState){
+        console.log(menuState + 'is true');
         elements.navBar.classList.remove('changeNav');
       }
     },

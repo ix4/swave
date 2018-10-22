@@ -15,6 +15,36 @@
   color: $footer-text;
 }
 
+.text-color{
+  padding: 1rem 1.5rem;
+  color: $text;
+  border: 2px solid $color-primary-2;
+
+  &:hover{
+    background-color: $color-primary-2;
+    color: white;
+  }
+
+  @media only screen and (max-width: $bp-medium){
+    padding: 0.5rem 1rem;
+  }
+
+  &-white{
+    color: white;
+    padding: 1rem 1.5rem;
+    border: 2px solid white;
+
+    @media only screen and (max-width: $bp-medium){
+      padding: 0.5rem 1rem;
+    }
+
+    &:hover{
+      background-color: white;
+      color: $color-primary-2;
+    }
+  }
+}
+
 .padding-text-big{
   padding-top: 5rem;
   padding-right: 7rem;
