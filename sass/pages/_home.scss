@@ -48,18 +48,18 @@
       }
 
       &-1{
-        @include bg-image('../../img/header_school.jpg');
+        @include bg-image('../img/header_school.jpg');
 
       }
 
       &-2{
-        @include bg-image('../../img/header_about.jpg');
+        @include bg-image('../img/header_about.jpg');
         transform: translateY(-20rem);
         transition-delay: 0.5s !important;
       }
 
       &-3{
-        @include bg-image('../../img/section_about1.jpg');
+        @include bg-image('../img/section_about1.jpg');
         transform: translateY(20rem);
         transition-delay: 1s !important;
       }
@@ -103,7 +103,7 @@
 
 
   &__left{
-    @include bg-image('../../img/section_school.jpg');
+    @include bg-image('../img/section_school.jpg');
     @include fadein(-15rem, 1s);
 
     @media only screen and (max-width: $bp-largest){
@@ -129,7 +129,7 @@
 }
 
 .surfstore{
-  @include bg-image('../../img/section_store.jpg');
+  @include bg-image('../img/section_store.jpg');
 
   @media only screen and (max-width: $bp-largest){
     height: 100%;
@@ -218,23 +218,23 @@
     }
 
     .i1{
-      @include bg-image('../../img/house1.jpg');
+      @include bg-image('../img/house1.jpg');
       transition-delay: 0.1s;
 
     }
 
     .i2{
-      @include bg-image('../../img/house2.jpg');
+      @include bg-image('../img/house2.jpg');
       transition-delay: 0.3s;
     }
 
     .i3{
-      @include bg-image('../../img/house3.jpg');
+      @include bg-image('../img/house3.jpg');
       transition-delay: 0.6s;
     }
 
     .i4{
-      @include bg-image('../../img/header_propertie.jpg');
+      @include bg-image('../img/header_propertie.jpg');
       transition-delay: 0.9s;
     }
 

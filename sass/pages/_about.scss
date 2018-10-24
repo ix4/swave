@@ -39,7 +39,7 @@
     .img-rect-1{
       height: 65vh;
       width: 30vw;
-      @include bg-image('../../img/about_1.jpg');
+      @include bg-image('../img/about_1.jpg');
 
       @media only screen and (max-width: $bp-largest){
         height: 50vh;
@@ -80,7 +80,7 @@
     .img-rect-2{
       height: 65vh;
       width: 30vw;
-      @include bg-image('../../img/about_2.jpg');
+      @include bg-image('../img/about_2.jpg');
 
       @media only screen and (max-width: $bp-largest){
         height: 50vh;
@@ -144,7 +144,7 @@
     .img-rect-3{
       height: 65vh;
       width: 30vw;
-      @include bg-image('../../img/about_3.jpg');
+      @include bg-image('../img/about_3.jpg');
 
       @media only screen and (max-width: $bp-largest){
         height: 50vh;

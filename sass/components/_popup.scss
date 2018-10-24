@@ -106,7 +106,7 @@
   &__image{
     width: 100%;
     height: 100%;
-    @include bg-image('../../img/house1.jpg');
+    @include bg-image('../img/house1.jpg');
   }
 
   &__book{
@@ -142,22 +142,22 @@
       }
       &-1{
         .feature__img{
-          @include bg-image('../../img/distance.png');
+          @include bg-image('../img/distance.png');
         }
       };
       &-2{
         .feature__img{
-          @include bg-image('../../img/bed.png');
+          @include bg-image('../img/bed.png');
         }
       };
       &-3{
         .feature__img{
-          @include bg-image('../../img/tag.png');
+          @include bg-image('../img/tag.png');
         }
       };
       &-4{
         .feature__img{
-          @include bg-image('../../img/selection.png');
+          @include bg-image('../img/selection.png');
         }
       };
     }

@@ -12,23 +12,23 @@
 
 
   &-home{
-    @include bg-image('../../img/header_home.jpg');
+    @include bg-image('../img/header_home.jpg');
   }
 
   &-about{
-    @include bg-image('../../img/header_about.jpg');
+    @include bg-image('../img/header_about.jpg');
   }
 
   &-school{
-    @include bg-image('../../img/header_school.jpg');
+    @include bg-image('../img/header_school.jpg');
   }
 
   &-properties{
-    @include bg-image('../../img/header_propertie.jpg');
+    @include bg-image('../img/header_propertie.jpg');
   }
 
   &-store{
-    @include bg-image('../../img/header_store.jpg');
+    @include bg-image('../img/header_store.jpg');
   }
 
   .logo-big{

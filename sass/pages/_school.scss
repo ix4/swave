@@ -78,7 +78,7 @@
 
       .img{
         @include fadein(-15vh, 1s);
-        @include bg-image('../../img/section_about1.jpg');
+        @include bg-image('../img/section_about1.jpg');
       }
 
       .text-content{
@@ -99,7 +99,7 @@
 
       .img{
         @include fadein(15vh, 1s);
-        @include bg-image('../../img/section_school1.jpg');
+        @include bg-image('../img/section_school1.jpg');
 
         @media only screen and (max-width: $bp-medium){
           grid-area: img;
@@ -122,7 +122,7 @@
       grid-template-columns: 1fr 4fr;
         .img{
           @include fadein(-15vh, 1s);
-          @include bg-image('../../img/section_school2.jpg');
+          @include bg-image('../img/section_school2.jpg');
         }
 
       .text-content > * {

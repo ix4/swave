@@ -19,7 +19,7 @@
   }
 
   &__left{
-    @include bg-image('../../img/header_contact.jpg');
+    @include bg-image('../img/header_contact.jpg');
     //width: 100%;
     @media only screen and (max-width: $bp-largest){
       height: 30vh!important;
