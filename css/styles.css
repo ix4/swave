@@ -102,7 +102,7 @@
   .popup__image {
     width: 100%;
     height: 100%;
-    background-image: url("../../img/house1.jpg");
+    background-image: url("../img/house1.jpg");
     background-position: center;
     background-size: cover; }
   .popup__book {
@@ -127,19 +127,19 @@
         width: 4rem;
         margin-right: 1rem; }
       .popup__features .feature-1 .feature__img {
-        background-image: url("../../img/distance.png");
+        background-image: url("../img/distance.png");
         background-position: center;
         background-size: cover; }
       .popup__features .feature-2 .feature__img {
-        background-image: url("../../img/bed.png");
+        background-image: url("../img/bed.png");
         background-position: center;
         background-size: cover; }
       .popup__features .feature-3 .feature__img {
-        background-image: url("../../img/tag.png");
+        background-image: url("../img/tag.png");
         background-position: center;
         background-size: cover; }
       .popup__features .feature-4 .feature__img {
-        background-image: url("../../img/selection.png");
+        background-image: url("../img/selection.png");
         background-position: center;
         background-size: cover; }
 
@@ -378,23 +378,23 @@ a {
   /* this prevents the animation from restarting! */
   transition-timing-function: ease-out; }
   .header-home {
-    background-image: url("../../img/header_home.jpg");
+    background-image: url("../img/header_home.jpg");
     background-position: center;
     background-size: cover; }
   .header-about {
-    background-image: url("../../img/header_about.jpg");
+    background-image: url("../img/header_about.jpg");
     background-position: center;
     background-size: cover; }
   .header-school {
-    background-image: url("../../img/header_school.jpg");
+    background-image: url("../img/header_school.jpg");
     background-position: center;
     background-size: cover; }
   .header-properties {
-    background-image: url("../../img/header_propertie.jpg");
+    background-image: url("../img/header_propertie.jpg");
     background-position: center;
     background-size: cover; }
   .header-store {
-    background-image: url("../../img/header_store.jpg");
+    background-image: url("../img/header_store.jpg");
     background-position: center;
     background-size: cover; }
   .header .logo-big {
@@ -740,17 +740,17 @@ a {
     backface-visibility: hidden;
     perspective: 1000; }
   .about__left .pic__wave-1 {
-    background-image: url("../../img/header_school.jpg");
+    background-image: url("../img/header_school.jpg");
     background-position: center;
     background-size: cover; }
   .about__left .pic__wave-2 {
-    background-image: url("../../img/header_about.jpg");
+    background-image: url("../img/header_about.jpg");
     background-position: center;
     background-size: cover;
     transform: translateY(-20rem);
     transition-delay: 0.5s !important; }
   .about__left .pic__wave-3 {
-    background-image: url("../../img/section_about1.jpg");
+    background-image: url("../img/section_about1.jpg");
     background-position: center;
     background-size: cover;
     transform: translateY(20rem);
@@ -787,7 +787,7 @@ a {
     height: 140vh; } }
 
 .surfschool__left {
-  background-image: url("../../img/section_school.jpg");
+  background-image: url("../img/section_school.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -816,7 +816,7 @@ a {
     transform: translateX(-30rem); }
 
 .surfstore {
-  background-image: url("../../img/section_store.jpg");
+  background-image: url("../img/section_store.jpg");
   background-position: center;
   background-size: cover; }
   @media only screen and (max-width: 1024px) {
@@ -891,22 +891,22 @@ a {
       opacity: 0;
       transition: all 1s; }
     .properties__right .i1 {
-      background-image: url("../../img/house1.jpg");
+      background-image: url("../img/house1.jpg");
       background-position: center;
       background-size: cover;
       transition-delay: 0.1s; }
     .properties__right .i2 {
-      background-image: url("../../img/house2.jpg");
+      background-image: url("../img/house2.jpg");
       background-position: center;
       background-size: cover;
       transition-delay: 0.3s; }
     .properties__right .i3 {
-      background-image: url("../../img/house3.jpg");
+      background-image: url("../img/house3.jpg");
       background-position: center;
       background-size: cover;
       transition-delay: 0.6s; }
     .properties__right .i4 {
-      background-image: url("../../img/header_propertie.jpg");
+      background-image: url("../img/header_propertie.jpg");
       background-position: center;
       background-size: cover;
       transition-delay: 0.9s; }
@@ -947,7 +947,7 @@ a {
 .s1__img .img-rect-1 {
   height: 65vh;
   width: 30vw;
-  background-image: url("../../img/about_1.jpg");
+  background-image: url("../img/about_1.jpg");
   background-position: center;
   background-size: cover; }
   @media only screen and (max-width: 1024px) {
@@ -982,7 +982,7 @@ a {
 .s2__img .img-rect-2 {
   height: 65vh;
   width: 30vw;
-  background-image: url("../../img/about_2.jpg");
+  background-image: url("../img/about_2.jpg");
   background-position: center;
   background-size: cover; }
   @media only screen and (max-width: 1024px) {
@@ -1031,7 +1031,7 @@ a {
   .s3__img .img-rect-3 {
     height: 65vh;
     width: 30vw;
-    background-image: url("../../img/about_3.jpg");
+    background-image: url("../img/about_3.jpg");
     background-position: center;
     background-size: cover; }
     @media only screen and (max-width: 1024px) {
@@ -1103,7 +1103,7 @@ a {
         transform: translateX(-15vh);
         opacity: 0;
         transition: all 1s;
-        background-image: url("../../img/section_about1.jpg");
+        background-image: url("../img/section_about1.jpg");
         background-position: center;
         background-size: cover; }
       .s1__options-1 .text-content > * {
@@ -1121,7 +1121,7 @@ a {
         transform: translateX(15vh);
         opacity: 0;
         transition: all 1s;
-        background-image: url("../../img/section_school1.jpg");
+        background-image: url("../img/section_school1.jpg");
         background-position: center;
         background-size: cover; }
         @media only screen and (max-width: 678px) {
@@ -1142,7 +1142,7 @@ a {
         transform: translateX(-15vh);
         opacity: 0;
         transition: all 1s;
-        background-image: url("../../img/section_school2.jpg");
+        background-image: url("../img/section_school2.jpg");
         background-position: center;
         background-size: cover; }
       .s1__options-3 .text-content > * {
@@ -1188,27 +1188,27 @@ a {
       .s1__properties .property {
         height: 30vw; } }
     .s1__properties .property-1 {
-      background-image: url("../../img/house1.jpg");
+      background-image: url("../img/house1.jpg");
       background-position: center;
       background-size: cover; }
     .s1__properties .property-2 {
-      background-image: url("../../img/house2.jpg");
+      background-image: url("../img/house2.jpg");
       background-position: center;
       background-size: cover; }
     .s1__properties .property-3 {
-      background-image: url("../../img/house3.jpg");
+      background-image: url("../img/house3.jpg");
       background-position: center;
       background-size: cover; }
     .s1__properties .property-4 {
-      background-image: url("../../img/house4.jpg");
+      background-image: url("../img/house4.jpg");
       background-position: center;
       background-size: cover; }
     .s1__properties .property-5 {
-      background-image: url("../../img/header_propertie.jpg");
+      background-image: url("../img/header_propertie.jpg");
       background-position: center;
       background-size: cover; }
     .s1__properties .property-6 {
-      background-image: url("../../img/house5.jpg");
+      background-image: url("../img/house5.jpg");
       background-position: center;
       background-size: cover; }
 
@@ -1251,7 +1251,7 @@ a {
     width: 100% !important;
     height: 100%; }
   .contacts__left {
-    background-image: url("../../img/header_contact.jpg");
+    background-image: url("../img/header_contact.jpg");
     background-position: center;
     background-size: cover; }
     @media only screen and (max-width: 1024px) {
