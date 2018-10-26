@@ -10,12 +10,12 @@
 
 html{
   //define o que 1rem é
-  font-size: 62.5%;
+  font-size: 65%;
   font-family: Helvetica, sans-serif;
   background-color: black;
 
   @media only screen and (max-width: $bp-large){
-    font-size: 60% !important;
+    font-size: 62% !important;
   }
 }
 
