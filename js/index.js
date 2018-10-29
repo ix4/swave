@@ -27,14 +27,14 @@ var viewCtrl = (function (){
       section3 = [document.querySelector('.s1__options-2'), '.s-2'],
       section4 = [document.querySelector('.s1__options-3'), '.s-3'],
     ]
-  }
+  };
   var storeElements = {
     sections : [
       section1 = [document.querySelector('.s1__content'), '.s-1'],
       section2 = [document.querySelector('.s1__map'), '.s-1'],
     ],
     map : document.getElementById('map')
-  }
+  };
 
   var propertiesElements = {
     sections: [
@@ -52,14 +52,14 @@ var viewCtrl = (function (){
     popupAdults: document.querySelector('.feature__adults'),
     popupPrice: document.querySelector('.feature__price'),
     popupArea: document.querySelector('.feature__area')
-  }
+  };
 
   var contactElements = {
     sections: [
       section1 = [document.querySelector('.contacts'), '.s-c']
     ],
     map : document.getElementById('map')
-  }
+  };
 
   var elements = {
 
