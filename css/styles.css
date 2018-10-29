@@ -157,12 +157,12 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
+  font-size: 65%;
   font-family: Helvetica, sans-serif;
   background-color: black; }
   @media only screen and (max-width: 768px) {
     html {
-      font-size: 55% !important; } }
+      font-size: 62% !important; } }
 
 body {
   box-sizing: border-box; }
@@ -422,6 +422,9 @@ a {
     transform: translateY(-10vh);
     align-content: flex-end;
     min-height: 100vh; }
+    @media only screen and (max-width: 492px) {
+      .headings-properties {
+        min-height: 90vh; } }
   @media only screen and (max-width: 492px) {
     .headings {
       padding-left: 2rem; } }
