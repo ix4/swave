@@ -103,15 +103,15 @@ var viewCtrl = (function (){
     },
 
     getPath : function(){
-      if ( window.location.pathname == '/about.html') {
+      if ( window.location.pathname == '/swave/about.html') {
         return viewCtrl.getAboutElements();
-      } else if (window.location.pathname == '/school.html'){
+      } else if (window.location.pathname == '/swave/school.html'){
         return viewCtrl.getSchoolElements();
-      } else if (window.location.pathname == '/store.html'){
+      } else if (window.location.pathname == '/swave/store.html'){
         return viewCtrl.getStoreElements();
-      } else if (window.location.pathname == '/properties.html'){
+      } else if (window.location.pathname == '/swave/properties.html'){
         return viewCtrl.getPropertiesElements();
-      } else if (window.location.pathname == '/contact.html'){
+      } else if (window.location.pathname == '/swave/contact.html'){
         return viewCtrl.getContactElements();
       } else {
         return viewCtrl.getHomeElements();
