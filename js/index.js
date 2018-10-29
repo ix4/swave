@@ -29,7 +29,7 @@ var viewCtrl = (function (){
     ]
   }
   var storeElements = {
-    sections : [
+    sections: [
       section1 = [document.querySelector('.s1__content'), '.s-1'],
       section2 = [document.querySelector('.s1__map'), '.s-1'],
     ],
@@ -62,7 +62,6 @@ var viewCtrl = (function (){
   }
 
   var elements = {
-
     loader: document.querySelector('.loading'),
     menuFive: document.querySelector('.menuFive'),
     navBar: document.querySelector('.nav'),
@@ -418,7 +417,9 @@ var appCtrl = (function (){
 
   var fadeInEl = function(scroll_pos, val, DOM, domEl){
     // 1. Get Element Position
-    domEl.sections.forEach(function(cur){
+    console.log(domEl);
+    domEl.sections.forEach((cur) => {
+      console.log(cur);
 
       var secPos = modelCtrl.getElPosition(cur[0]);
 
