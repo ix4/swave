@@ -11,7 +11,7 @@ var viewCtrl = (function (){
     wavepic1 : document.querySelector('.pic__wave-1'),
     wavepic2 : document.querySelector('.pic__wave-2'),
     wavepic3 : document.querySelector('.pic__wave-3'),
-  }
+  };
 
   var aboutElements = {
     sections: [
@@ -19,7 +19,7 @@ var viewCtrl = (function (){
       section2 = [document.querySelector('.s2'), '.s-2'],
       section3 = [document.querySelector('.s3'), '.s-3'],
     ],
-  }
+  };
   var schoolElements = {
     sections: [
       section1 = [document.querySelector('.s1__content'), '.s-c'],
